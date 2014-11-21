@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="MUI.Themes.Base64.Content.About"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel MinWidth="200">
+                <TextBlock Text="ABOUT" Style="{StaticResource Heading2}" />
+                <mui:BBCodeBlock BBCode="The [b]MUI.Themes.Base64 encoder/decoder[/b] is an program to encode and to decode the Base64 API. For now, you can only encode and decode PNG images, but I plan to add more in the future." Margin="0,0,0,4"/>
+                <mui:BBCodeBlock BBCode="You can go to the [url=https://github.com/charlesmilette/MUI.Themes.Base64]GitHub page[/url] to get the source code."/>
+                <mui:BBCodeBlock BBCode="You can go to the [url=https://charlesmilette.github.io/MUI.Themes.Base64]web site[/url] to get more details."/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
