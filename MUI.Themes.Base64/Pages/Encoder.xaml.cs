@@ -29,15 +29,19 @@ namespace MUI.Themes.Base64.Pages
         {
             OpenFileDialog Browse = new OpenFileDialog();
 
-            Browse.Title = "Browse for a file";
+            Browse.Title = "Browse...";
             Browse.InitialDirectory = "Desktop";
             Browse.Filter = "Portable Network Graphics|*.png";
             Browse.CheckFileExists = true;
             Browse.CheckPathExists = true;
             Browse.ValidateNames = true;
             Browse.Multiselect = false;
-            Browse.ToString();
-            Browse.ShowDialog();
+            Nullable<bool> FileSelected = Browse.ShowDialog();
+            if (FileSelected == true)
+            {
+                string File = Browse.FileName;
+                OpenedFile.Text = "   " +File;
+            }
         }
     }
 }

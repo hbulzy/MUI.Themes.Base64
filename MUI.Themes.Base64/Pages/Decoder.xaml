@@ -11,8 +11,8 @@
                 <TextBox ToolTip="To paste, use Ctrl+V" TextWrapping="Wrap" Height="Auto" />
                 <TextBlock/>
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="Save as" Width="Auto" HorizontalAlignment="Left" Click="Button_Click"/>
-                    <TextBlock Text="" Foreground="{DynamicResource WindowTextReadOnly}" />
+                    <Button Content="Save as..." Width="Auto" HorizontalAlignment="Left" Click="Button_Click"/>
+                    <TextBlock Text="   Please choose a file" Name="OpenedFile" Foreground="{DynamicResource WindowTextReadOnly}"  VerticalAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

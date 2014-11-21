@@ -29,14 +29,17 @@ namespace MUI.Themes.Base64.Pages
         {
             SaveFileDialog Save = new SaveFileDialog();
 
-            Save.Title = "Save as";
+            Save.Title = "Save as...";
             Save.InitialDirectory = "Desktop";
             Save.Filter = "Portable Network Graphics|*.png";
-            Save.CheckFileExists = true;
             Save.CheckPathExists = true;
             Save.ValidateNames = true;
-            Save.ToString();
-            Save.ShowDialog();
+            Nullable<bool> FileSelected = Save.ShowDialog();
+            if (FileSelected == true)
+            {
+                string File = Save.FileName;
+                OpenedFile.Text = "   "+File;
+            }
         }
     }
 }

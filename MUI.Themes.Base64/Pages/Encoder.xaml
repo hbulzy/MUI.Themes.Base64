@@ -13,8 +13,8 @@
                     </Style>
                 </StackPanel.Resources>
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="Browse for a file" Width="Auto" HorizontalAlignment="Left" Click="Button_Click"/>
-                    <TextBlock Text="" Foreground="{DynamicResource WindowTextReadOnly}" />
+                    <Button Content="Browse..." Width="Auto" HorizontalAlignment="Left" Click="Button_Click"/>
+                    <TextBlock Text="   Please choose a file" Name="OpenedFile" Foreground="{DynamicResource WindowTextReadOnly}"  VerticalAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
