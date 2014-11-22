@@ -13,6 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using Base64Bitmaps;
+using System.IO;
+using System.Drawing;
+using System.Drawing.Imaging;
+using FirstFloor.ModernUI.Windows.Controls;
 
 namespace MUI.Themes.Base64.Pages
 {
@@ -47,7 +51,11 @@ namespace MUI.Themes.Base64.Pages
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            StreamReader streamReader = new StreamReader("Temp.png");
+            Bitmap bmp = new Bitmap(streamReader.BaseStream);
+            streamReader.Close();
+            string base64 = bmp.ToBase64API(ImageFormat.Png);
+            var result = FinalResult.Text = base64;
         }
     }
 }

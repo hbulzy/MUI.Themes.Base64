@@ -18,6 +18,9 @@
                 </StackPanel>
                 <TextBlock/>
                 <Button Content="Encode" Click="Button_Click_1"/>
+                <TextBlock/>
+                <TextBlock Text="Result:"/>
+                <TextBox IsReadOnly="True" Text="You didn't encoded a image..." Name="FinalResult" Width="Auto" TextWrapping="Wrap"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
