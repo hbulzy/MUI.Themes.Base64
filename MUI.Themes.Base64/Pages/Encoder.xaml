@@ -16,6 +16,8 @@
                     <Button Content="Browse..." Width="Auto" HorizontalAlignment="Left" Click="Button_Click"/>
                     <TextBlock Text="   Please choose a file" Name="OpenedFile" Foreground="{DynamicResource WindowTextReadOnly}"  VerticalAlignment="Center"/>
                 </StackPanel>
+                <TextBlock/>
+                <Button Content="Encode" Click="Button_Click_1"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

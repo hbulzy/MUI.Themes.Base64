@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using Base64Bitmaps;
 
 namespace MUI.Themes.Base64.Pages
 {
@@ -40,8 +41,13 @@ namespace MUI.Themes.Base64.Pages
             if (FileSelected == true)
             {
                 string File = Browse.FileName;
-                OpenedFile.Text = "   " +File;
+                OpenedFile.Text = "   "+File;
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
