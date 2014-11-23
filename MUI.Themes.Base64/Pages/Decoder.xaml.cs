@@ -1,5 +1,8 @@
-﻿using Microsoft.Win32;
+﻿using Base64Bitmaps;
+using Microsoft.Win32;
 using System;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -29,6 +32,11 @@ namespace MUI.Themes.Base64.Pages
             {
                 string SaveFile = Save.FileName;
                 SavedFile.Text = "   "+SaveFile;
+                string base64ImageString = Base64String.Text;
+
+                Bitmap bmpFromString = base64ImageString.Base64StringToBitmap();
+                bmpFromString.Save(SaveFile, ImageFormat.Png);
+                ResultText.BBCode="It has also been saved as " + SaveFile + ".";
             }
         }
     }
