@@ -4,11 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <TextBlock Text="TODO:Add content." />
+                <mui:BBCodeBlock BBCode="MUI.Themes.Base64 got the code to convert integrated in itself, preventing any command prompt or new process or even a DLL. The system (because it's the system who converts it) does not accept a Base64 API directly. It cannot add or remove 'data:image/png;base64,' by itself. When you encode, the script will add it before sending it to the interface so that it displays to you. When you decode, it checks is presence so that you can't fool the program and remove it before sending it to the script. The script I used to generate a Base64 string and the file had been taken from [url=https://code.msdn.microsoft.com/Converting-Base64-strings-8808c305]this sample[/url]."/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

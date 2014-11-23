@@ -10,10 +10,11 @@
         <ScrollViewer>
             <StackPanel MinWidth="200">
                 <mui:BBCodeBlock BBCode="MUI.Themes.Base64 encoder/decoder" Style="{StaticResource Heading1}" Margin="0,0,0,8"/>
-                <mui:BBCodeBlock BBCode="Welcome to the [b]MUI.Themes.Base64 encoder/decoder[/b]. For now, you can only encode and decode PNG images, but I plan to add more in the future. To start, click on the Encoder or the Decoder tab." Margin="0,0,0,4"/>
+                <mui:BBCodeBlock BBCode="Welcome to the [b]MUI.Themes.Base64 encoder/decoder[/b]. You can only encode and decode PNG images. To start, click on the Encoder or the Decoder tab." Margin="0,0,0,4"/>
                 <mui:BBCodeBlock BBCode="You can go to the [url=/Pages/Settings.xaml]settings page[/url] to adapt the appearance to your preference."/>
                 <mui:BBCodeBlock BBCode="You can go to the [url=https://github.com/charlesmilette/MUI.Themes.Base64]GitHub page[/url] to get the source code."/>
                 <mui:BBCodeBlock BBCode="You can go to the [url=https://charlesmilette.github.io/MUI.Themes.Base64]web site[/url] to get more details."/>
+                <mui:BBCodeBlock BBCode="The ExtBitmap.cs file comes from [url=https://code.msdn.microsoft.com/Converting-Base64-strings-8808c305]this sample[/url]."/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

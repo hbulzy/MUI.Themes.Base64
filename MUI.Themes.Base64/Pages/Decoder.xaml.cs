@@ -21,7 +21,6 @@ namespace MUI.Themes.Base64.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog Save = new SaveFileDialog();
-            Base64String.Text = "";
             SavedFile.Text = "   Please choose a file";
             ResultText.BBCode = "The decoding will begin automatically after you select a file.";
             Save.Title = "Save as...";
@@ -48,6 +47,7 @@ namespace MUI.Themes.Base64.Pages
                         Bitmap bmpFromString = base64ImageString.Base64StringToBitmap();
                         bmpFromString.Save(SaveFile, ImageFormat.Png);
                         Loading.IsActive = false;
+                        Base64String.Text = "";
                         ResultText.BBCode = "It has been saved as " + SaveFile + ".";
                     }
             }
