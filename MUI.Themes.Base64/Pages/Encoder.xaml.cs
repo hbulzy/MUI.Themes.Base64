@@ -38,10 +38,11 @@ namespace MUI.Themes.Base64.Pages
                 OpenedFile.Text = "   " + OpenFile;
                 StreamReader streamReader = new StreamReader(OpenFile);
                 Loading.IsActive = true;
+                FinalResult.Text = "Encoding...";
                 Bitmap bmp = new Bitmap(streamReader.BaseStream);
-                Loading.IsActive = false;
                 streamReader.Close();
-                FinalResult.Text = bmp.ToBase64API(ImageFormat.Png);
+                Loading.IsActive = false;
+                FinalResult.Text = "data:image/png;base64," + bmp.ToBase64String(ImageFormat.Png);
             }
         }
     }

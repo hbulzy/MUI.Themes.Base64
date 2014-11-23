@@ -17,7 +17,8 @@
                 </StackPanel>
                 <TextBlock/>
                 <TextBlock Text="Result:"/>
-                <mui:BBCodeBlock BBCode="The decoding will begin automatically after you selected a file." Name="ResultText"/>
+                <mui:BBCodeBlock BBCode="The decoding will begin automatically after you select a file." Name="ResultText"/>
+                <mui:ModernProgressRing Width="80" Height="80" Style="{StaticResource WaveProgressRingStyle}" Name="Loading" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

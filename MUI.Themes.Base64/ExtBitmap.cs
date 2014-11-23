@@ -28,19 +28,6 @@ namespace Base64Bitmaps
             return base64String;
         }
 
-        public static string ToBase64API(this Bitmap bmp, ImageFormat imageFormat)
-        {
-            string imgAPI = string.Empty;
-            string base64String = string.Empty;
-
-            base64String = bmp.ToBase64String(imageFormat);
-
-            imgAPI = "data:image/" + imageFormat.ToString() + ";base64,";
-            imgAPI += base64String;
-
-            return imgAPI;
-        }
-
         public static Bitmap Base64StringToBitmap(this string base64String)
         {
             Bitmap bmpReturn = null;

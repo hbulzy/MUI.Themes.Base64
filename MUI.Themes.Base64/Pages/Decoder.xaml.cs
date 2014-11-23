@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -21,7 +22,9 @@ namespace MUI.Themes.Base64.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog Save = new SaveFileDialog();
-
+            Base64String.Text = "";
+            SavedFile.Text = "   Please choose a file";
+            ResultText.BBCode = "The decoding will begin automatically after you select a file.";
             Save.Title = "Save as...";
             Save.InitialDirectory = "Desktop";
             Save.Filter = "Portable Network Graphics|*.png";
@@ -33,10 +36,21 @@ namespace MUI.Themes.Base64.Pages
                 string SaveFile = Save.FileName;
                 SavedFile.Text = "   "+SaveFile;
                 string base64ImageString = Base64String.Text;
-
-                Bitmap bmpFromString = base64ImageString.Base64StringToBitmap();
-                bmpFromString.Save(SaveFile, ImageFormat.Png);
-                ResultText.BBCode="It has also been saved as " + SaveFile + ".";
+                int ContainsBase64 = base64ImageString.IndexOf("data:image/png;base64,");
+                if (ContainsBase64 == -1)
+                    {
+                        ResultText.BBCode = "Good try, maybe another time.";
+                    }
+                else
+                    {
+                        ResultText.BBCode = "Decoding...";
+                        Loading.IsActive = true;
+                        base64ImageString = base64ImageString.Replace("data:image/png;base64,", string.Empty);
+                        Bitmap bmpFromString = base64ImageString.Base64StringToBitmap();
+                        bmpFromString.Save(SaveFile, ImageFormat.Png);
+                        Loading.IsActive = false;
+                        ResultText.BBCode = "It has been saved as " + SaveFile + ".";
+                    }
             }
         }
     }
