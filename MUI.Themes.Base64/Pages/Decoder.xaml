@@ -12,7 +12,7 @@
                 <TextBlock/>
                 <StackPanel Orientation="Horizontal">
                     <Button Content="Save as..." Width="Auto" HorizontalAlignment="Left" Click="Button_Click"/>
-                    <TextBlock Text="   Please choose a file" Name="OpenedFile" Foreground="{DynamicResource WindowTextReadOnly}"  VerticalAlignment="Center"/>
+                    <TextBlock Text="   Please choose a file" Name="SavedFile" Foreground="{DynamicResource WindowTextReadOnly}"  VerticalAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

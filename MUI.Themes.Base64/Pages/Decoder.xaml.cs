@@ -1,17 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 
 namespace MUI.Themes.Base64.Pages
 {
@@ -37,8 +27,8 @@ namespace MUI.Themes.Base64.Pages
             Nullable<bool> FileSelected = Save.ShowDialog();
             if (FileSelected == true)
             {
-                string File = Save.FileName;
-                OpenedFile.Text = "   "+File;
+                string SaveFile = Save.FileName;
+                SavedFile.Text = "   "+SaveFile;
             }
         }
     }

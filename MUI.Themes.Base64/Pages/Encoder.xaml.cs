@@ -1,22 +1,11 @@
-﻿using Microsoft.Win32;
+﻿using Base64Bitmaps;
+using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using Base64Bitmaps;
-using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
-using FirstFloor.ModernUI.Windows.Controls;
+using System.IO;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace MUI.Themes.Base64.Pages
 {
@@ -32,8 +21,9 @@ namespace MUI.Themes.Base64.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            OpenedFile.Text = "   Please choose a file";
+            FinalResult.Text = "The encoding will automatically start when you select a file.";
             OpenFileDialog Browse = new OpenFileDialog();
-
             Browse.Title = "Browse...";
             Browse.InitialDirectory = "Desktop";
             Browse.Filter = "Portable Network Graphics|*.png";
@@ -44,18 +34,15 @@ namespace MUI.Themes.Base64.Pages
             Nullable<bool> FileSelected = Browse.ShowDialog();
             if (FileSelected == true)
             {
-                string File = Browse.FileName;
-                OpenedFile.Text = "   "+File;
+                string OpenFile = Browse.FileName;
+                OpenedFile.Text = "   " + OpenFile;
+                StreamReader streamReader = new StreamReader(OpenFile);
+                Loading.IsActive = true;
+                Bitmap bmp = new Bitmap(streamReader.BaseStream);
+                Loading.IsActive = false;
+                streamReader.Close();
+                FinalResult.Text = bmp.ToBase64API(ImageFormat.Png);
             }
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            StreamReader streamReader = new StreamReader("Temp.png");
-            Bitmap bmp = new Bitmap(streamReader.BaseStream);
-            streamReader.Close();
-            string base64 = bmp.ToBase64API(ImageFormat.Png);
-            var result = FinalResult.Text = base64;
         }
     }
 }
