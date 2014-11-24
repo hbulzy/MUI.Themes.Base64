@@ -14,6 +14,7 @@
                 <mui:BBCodeBlock BBCode="You can go to the [url=https://github.com/charlesmilette/MUI.Themes.Base64]GitHub page[/url] to get the source code."/>
                 <mui:BBCodeBlock BBCode="You can go to the [url=https://charlesmilette.github.io/MUI.Themes.Base64]web site[/url] to get more details."/>
                 <mui:BBCodeBlock BBCode="The ExtBitmap.cs file comes from [url=https://code.msdn.microsoft.com/Converting-Base64-strings-8808c305]this sample[/url]."/>
+                <mui:BBCodeBlock BBCode="The icon comes from [url=https://github.com/alecive/FlatWoken]this repository[/url]."/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
