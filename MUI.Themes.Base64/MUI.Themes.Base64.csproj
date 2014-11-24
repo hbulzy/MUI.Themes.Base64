@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <SupportUrl>http://charlesmilette.me/MUI.Themes.Base64/</SupportUrl>
+    <SupportUrl>https://charlesmilette.github.io/MUI.Themes.Base64</SupportUrl>
     <ProductName>MUI.Themes.Base64</ProductName>
     <PublisherName>Charles Milette</PublisherName>
     <SuiteName>MUI.Themes</SuiteName>
