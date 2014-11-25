@@ -33,9 +33,7 @@ namespace MUI.Themes.Base64.Pages
             {
                 string SaveFile = Save.FileName;
                 SavedFile.Text = "   "+SaveFile;
-                string base64ImageString = Base64String.Text;
-                int ContainsBase64 = base64ImageString.IndexOf("data:image/png;base64,");
-                if (ContainsBase64 == -1)
+                if (Base64String.Text.IndexOf("data:image/png;base64,") == -1)
                     {
                         ResultText.BBCode = "Good try, maybe another time.";
                     }
@@ -43,9 +41,8 @@ namespace MUI.Themes.Base64.Pages
                     {
                         ResultText.BBCode = "Decoding...";
                         Loading.IsActive = true;
-                        base64ImageString = base64ImageString.Replace("data:image/png;base64,", string.Empty);
-                        Bitmap bmpFromString = base64ImageString.Base64StringToBitmap();
-                        bmpFromString.Save(SaveFile, ImageFormat.Png);
+                        string Base64 = Base64String.Text.Replace("data:image/png;base64,", string.Empty);
+                        Base64.Base64StringToBitmap().Save(SaveFile, ImageFormat.Png);
                         Loading.IsActive = false;
                         Base64String.Text = "";
                         ResultText.BBCode = "It has been saved as " + SaveFile + ".";
