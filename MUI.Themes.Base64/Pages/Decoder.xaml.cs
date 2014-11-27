@@ -33,20 +33,17 @@ namespace MUI.Themes.Base64.Pages
             {
                 string SaveFile = Save.FileName;
                 SavedFile.Text = "   "+SaveFile;
-                if (Base64String.Text.IndexOf("data:image/png;base64,") == -1)
-                    {
-                        ResultText.BBCode = "Good try, maybe another time.";
-                    }
-                else
-                    {
-                        ResultText.BBCode = "Decoding...";
-                        Loading.IsActive = true;
-                        string Base64 = Base64String.Text.Replace("data:image/png;base64,", string.Empty);
-                        Base64.Base64StringToBitmap().Save(SaveFile, ImageFormat.Png);
-                        Loading.IsActive = false;
-                        Base64String.Text = "";
-                        ResultText.BBCode = "It has been saved as " + SaveFile + ".";
-                    }
+                ResultText.BBCode = "Decoding...";
+                Loading.IsActive = true;
+                try
+                {
+                    Base64String.Text.Replace("data:image/png;base64,", string.Empty).Base64StringToBitmap().Save(SaveFile, ImageFormat.Png);
+                    ResultText.BBCode = "It has been saved as " + SaveFile + ".";
+                }
+                catch (Exception exc){ResultText.BBCode = "Good try, maybe another time.";}
+                Base64String.Text = "";
+                Loading.IsActive = false;
+                SavedFile.Text = "   Please choose a file";
             }
         }
     }
