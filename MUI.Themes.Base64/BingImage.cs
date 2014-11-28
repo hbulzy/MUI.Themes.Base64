@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using FirstFloor.ModernUI.Presentation;
+using FirstFloor.ModernUI.Windows.Controls;
+using System;
 using System.Globalization;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,22 +28,28 @@ namespace MUI.Themes.Base64
             var image = o as Image;
             var imageBrush = o as ImageBrush;
 
-            if (!newValue || (image == null && imageBrush == null)) {
+            if (!newValue || (image == null && imageBrush == null))
+            {
                 return;
             }
 
-            if (cachedBingImage == null) {
+            if (cachedBingImage == null)
+            {
                 var url = await GetCurrentBingImageUrl();
-                if (url != null) {
+                if (url != null)
+                {
                     cachedBingImage = new BitmapImage(url);
                 }
             }
 
-            if (cachedBingImage != null){
-                if (image != null) {
+            if (cachedBingImage != null)
+            {
+                if (image != null)
+                {
                     image.Source = cachedBingImage;
                 }
-                else if (imageBrush != null) {
+                else if (imageBrush != null)
+                {
                     imageBrush.ImageSource = cachedBingImage;
                 }
             }
@@ -52,10 +57,14 @@ namespace MUI.Themes.Base64
 
         private static async Task<Uri> GetCurrentBingImageUrl()
         {
+            try
+            {
             var client = new HttpClient();
             var result = await client.GetAsync("http://www.bing.com/hpimagearchive.aspx?format=xml&idx=0&n=2&mbl=1&mkt=en-ww");
-            if (result.IsSuccessStatusCode) {
-                using (var stream = await result.Content.ReadAsStreamAsync()) {
+            if (result.IsSuccessStatusCode)
+            {
+                using (var stream = await result.Content.ReadAsStreamAsync())
+                {
                     var doc = XDocument.Load(stream);
 
                     var url = (string)doc.XPathSelectElement("/images/image/url");
@@ -65,6 +74,14 @@ namespace MUI.Themes.Base64
             }
 
             return null;
+            }
+            catch (Exception exc)
+            {
+                AppearanceManager.Current.ThemeSource = AppearanceManager.LightThemeSource;
+                AppearanceManager.Current.AccentColor = Color.FromRgb(0xe5, 0x14, 0x00);
+                ModernDialog.ShowMessage("There was an error retrieving the Bing Image of the day. This is probably caused by your internet connection. Please check it by browsing to any webpage.", "Error", MessageBoxButton.OK);
+                return null;
+            }
         }
 
 
