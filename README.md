@@ -1,2 +1,2 @@
 The MUI.Themes.Base64 encoder/decoder is an program to encode and to decode the Base64 API. You can only encode and decode PNG images. You can go to the [web site](https://charlesmilette.github.io/MUI.Themes.Base64) to get more details.The ExtBitmap.cs file comes from [this sample](https://code.msdn.microsoft.com/Converting-Base64-strings-8808c305). The icon comes from [this repo](https://github.com/alecive/FlatWoken).  
-The releases are in the `release` branch.
+The releases are at https://charlesmilette.github.io/MUI.Themes.Base64
