@@ -1,4 +1,5 @@
 ﻿using Base64Bitmaps;
+using FirstFloor.ModernUI.Windows.Controls;
 using Microsoft.Win32;
 using System;
 using System.Drawing;
@@ -22,6 +23,7 @@ namespace MUI.Themes.Base64.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             OpenedFile.Text = "   Please choose a file";
+            SavedFile.Text = "   Please choose a file";
             FinalResult.Text = "The encoding will automatically start when you select a file.";
             OpenFileDialog Browse = new OpenFileDialog();
             Browse.Title = "Browse...";
@@ -44,6 +46,30 @@ namespace MUI.Themes.Base64.Pages
                 Loading.IsActive = false;
                 FinalResult.Text = "data:image/png;base64," + bmp.ToBase64String(ImageFormat.Png);
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (FinalResult.Text == "The encoding will automatically start when you select a file.")
+            {
+                ModernDialog.ShowMessage("You haven't encoded anything, duh.", "Dumb!!!", MessageBoxButton.OK);
+            }
+            else
+                {
+            SaveFileDialog Save = new SaveFileDialog();
+            Save.Title = "Save as...";
+            Save.InitialDirectory = "Desktop";
+            Save.Filter = "Text|*.txt";
+            Save.CheckPathExists = true;
+            Save.ValidateNames = true;
+            Nullable<bool> FileSelected = Save.ShowDialog();
+            if (FileSelected == true)
+            {
+                    System.IO.File.WriteAllText(@Save.FileName, FinalResult.Text);
+                    string SaveFile = Save.FileName;
+                    SavedFile.Text = "   " + SaveFile;
+            }
+                }
         }
     }
 }

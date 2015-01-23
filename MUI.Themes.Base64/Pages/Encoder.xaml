@@ -18,7 +18,12 @@
                     <TextBlock Text="   Please choose a file" Name="OpenedFile" Foreground="{DynamicResource WindowTextReadOnly}"  VerticalAlignment="Center"/>
                 </StackPanel>
                 <TextBlock/>
-                <TextBlock Text="Result:" Name="Result"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Result:      " Name="Result" VerticalAlignment="Center"/>
+                    <Button Content="Save as..." Width="Auto" Height="Auto" HorizontalAlignment="Left" Click="Button_Click_1"/>
+                    <TextBlock Text="   Please choose a file" Name="SavedFile" Foreground="{DynamicResource WindowTextReadOnly}"  VerticalAlignment="Center"/>
+                </StackPanel>
+                <TextBlock/>
                 <TextBox IsReadOnly="True" Text="The encoding will automatically start when you select a file." Name="FinalResult" Width="Auto" TextWrapping="Wrap" ToolTip="To copy, use Ctrl+A and after press Ctrl+C."/>
                 <mui:ModernProgressRing Width="80" Height="80" Style="{StaticResource WaveProgressRingStyle}" Name="Loading" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
