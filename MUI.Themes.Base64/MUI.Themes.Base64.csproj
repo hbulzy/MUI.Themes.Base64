@@ -234,6 +234,7 @@
     <Content Include="Assets\background.windows8.1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\transparent.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MUI.Themes.Base64_CléTemporaire.pfx" />

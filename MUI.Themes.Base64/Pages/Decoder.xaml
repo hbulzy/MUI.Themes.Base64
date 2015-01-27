@@ -9,7 +9,13 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <TextBox ToolTip="To paste, use Ctrl+V" TextWrapping="Wrap" Height="Auto" Name="Base64String"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Browse..." Width="Auto" HorizontalAlignment="Left" Click="Button_Click_1"/>
+                    <TextBlock Text="   " VerticalAlignment="Center"/>
+                    <TextBlock Text="Please choose a file" Name="BrowsedFile" Foreground="{DynamicResource WindowTextReadOnly}"  VerticalAlignment="Center"/>
+                </StackPanel>
+                <TextBlock Text="------ or ------" HorizontalAlignment="Center"/>
+                <TextBox ToolTip="To paste, use Ctrl+V" TextWrapping="Wrap" Height="Auto" Name="Base64String" KeyDown="Base64String_KeyDown"/>
                 <TextBlock/>
                 <StackPanel Orientation="Horizontal">
                     <Button Content="Save as..." Width="Auto" HorizontalAlignment="Left" Click="Button_Click"/>
@@ -19,6 +25,7 @@
                 <TextBlock Text="Result:"/>
                 <mui:BBCodeBlock BBCode="The decoding will begin automatically after you select a file." Name="ResultText"/>
                 <mui:ModernProgressRing Width="80" Height="80" Style="{StaticResource WaveProgressRingStyle}" Name="Loading" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Image Name="ResultImage" Height="256" Width="256" Stretch="Uniform"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
