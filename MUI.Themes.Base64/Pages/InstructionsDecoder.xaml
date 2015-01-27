@@ -9,7 +9,7 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <mui:BBCodeBlock BBCode="First, type (for patient ones) or paste the Base64 string. Do not forget to include 'data:image/png;base64,'. After, press the 'Save as...' button and choose where to save. The rest is all automatic. You will a little text under 'Result' that will confirm you the save location and it's success." />
+                <mui:BBCodeBlock BBCode="First, type (for patient ones) or paste the Base64 string. You can also browse for a file containing it or that you saved with the encoder. After, press the 'Save as...' button and choose where to save. The rest is all automatic. You will a little text under 'Result' that will confirm you the save location and it's success. A preview will also give you the result of the decoding." />
             </StackPanel>
         </ScrollViewer>
     </Grid>
