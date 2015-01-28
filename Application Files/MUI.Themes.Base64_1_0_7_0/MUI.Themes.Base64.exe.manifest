@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="MUI.Themes.Base64.exe" version="1.0.7.0" publicKeyToken="9e5cbaee8a9c17dc" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Assets\Icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="MUI.Themes.Base64" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="MUI.Themes.Base64.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Options du manifeste de contrôle de compte d'utilisateur
+          Si vous souhaitez modifier le niveau du contrôle de compte d'utilisateur Windows, remplacez le 
+          nœud requestedExecutionLevel par l'une des propositions suivantes :
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Si vous souhaitez utiliser la virtualisation de fichiers et du Registre pour la 
+         compatibilité descendante, supprimez le nœud requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FirstFloor.ModernUI.dll" size="245760">
+      <assemblyIdentity name="FirstFloor.ModernUI" version="1.0.6.0" publicKeyToken="2D21EC3CD074C59A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>KcgJYNo7oDLlo3A0PChL8c2X1ewDWHz925uaCgnha4k=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MUI.Themes.Base64.exe" size="107464">
+      <assemblyIdentity name="MUI.Themes.Base64" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>SokWyNKDDXFvUu9y0gmY+OgJIqitsQ9c88IkVKKCzm0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Assets\background.kitty.png" size="45471">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MiGLauSPECeszaEPD5jrku1iV50fzTNzf5G5uaww2zU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Assets\background.love.jpg" size="298203">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>soBDtzPKMQy/N/dmROgXF8G1FxDUwvrF6+XDOxiADJE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Assets\background.metro.png" size="295187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>DbTEJVFjYTwznnIDXc3M3mSNZ3SVN0a9eShdrOAWk/4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Assets\background.snowflakes.jpg" size="208234">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>43ZrZ94vGxdgIh9KqyHucifwnWgNCwvm0Xqb5insX/I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Assets\background.windows8.1.jpg" size="982902">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wnSSJ8ueIvsJddlNkok+ehehF9UVHuFtaZY+VDALby4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Assets\Icon.ico" size="50100">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>hJPC47ZdxdquJ5UtiaQqlSneqrsfnBoEUUDPd8YIz3U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Assets\transparent.png" size="448">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>vGLwcC9B6rCsNvP5OR58aViEN+mmGz8siQuT01K1O8E=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=TOSHIBA-1\Charles" issuerKeyHash="867d7b100be59bb64204e1624c6938e9c5773122" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>sA0wftO0X0PDPAi+denMrWqFpjsJsH8HpN1WdOvmF2U=</DigestValue></Reference></SignedInfo><SignatureValue>CrAezdw5nmONa/kcOoqG/EhRhQRQ9+Wp9VZ0/Bjb/3gxeg8MmH9XDsqj3nHGFf1+Lq0Yd54f2p79X++wU3Uw9UJ33o8uoL147NSINMdupACET0rcCEOz0iKViUXnxModx54cyH17pGftgUnhfETH+yEtx5NV+2+2g9Z+BXoUgOo=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>wHZcYZOjLfjRcPiAmuzU65HHtPQcFX9k2uqODj1DgmIwCn1d+1waHuhHTEg/jQAdLosuW09VPsXxd8MDw/MEd/VhDlFq3cU6/BfsgYzeAPBAYVZ6i3X2qonjSqmJguf+5zvEAzrB+liqDO0Q5fTKd1EHppx8lCZN254j8RwD5d0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="6517e6eb7456dda4077fb0093ba6856aadcce975be083cc3435fb4d37e300db0" Description="" Url=""><as:assemblyIdentity name="MUI.Themes.Base64.exe" version="1.0.7.0" publicKeyToken="9e5cbaee8a9c17dc" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=TOSHIBA-1\Charles</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>fkBm4eZVk5L7RjshWxO8/yVHenuXCuQU2Ri2+9BkooY=</DigestValue></Reference></SignedInfo><SignatureValue>Z9tcebzBWJqr8Wq8xxwKTcQn7OOLEJmgZmHB7WRyoPVKLM8R1U/+qIcsrUVOHlUtuVqbqO1oV4jKvEX/g452w1gcch7XrjkRJPUI/RNSk0VaYHDFduQtdPNDWBWeN2v41+tezh+/DyhxPJ7rIOol85M5vKe5ymbQJBvnhyNvBN0=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>wHZcYZOjLfjRcPiAmuzU65HHtPQcFX9k2uqODj1DgmIwCn1d+1waHuhHTEg/jQAdLosuW09VPsXxd8MDw/MEd/VhDlFq3cU6/BfsgYzeAPBAYVZ6i3X2qonjSqmJguf+5zvEAzrB+liqDO0Q5fTKd1EHppx8lCZN254j8RwD5d0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB3TCCAUagAwIBAgIQFvcqfxTqa5VMFOxrJ13jvzANBgkqhkiG9w0BAQsFADAtMSswKQYDVQQDHiIAVABPAFMASABJAEIAQQAtADEAXABDAGgAYQByAGwAZQBzMB4XDTE1MDEyMzIyNDUzOVoXDTE2MDEyNDA0NDUzOVowLTErMCkGA1UEAx4iAFQATwBTAEgASQBCAEEALQAxAFwAQwBoAGEAcgBsAGUAczCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAwHZcYZOjLfjRcPiAmuzU65HHtPQcFX9k2uqODj1DgmIwCn1d+1waHuhHTEg/jQAdLosuW09VPsXxd8MDw/MEd/VhDlFq3cU6/BfsgYzeAPBAYVZ6i3X2qonjSqmJguf+5zvEAzrB+liqDO0Q5fTKd1EHppx8lCZN254j8RwD5d0CAwEAATANBgkqhkiG9w0BAQsFAAOBgQCtLUj+px1CLEjVCK3v7+KuwSYt7/CT1D5ObtOKVMyJwmxEtsqZDeLKCbXAePx6XgH3wNvCVRjZJxiPjZAA6hTEeTZpRhOGPC8SbTSTZe2RKnFE8+lYQnH1I4XH5t4fOQL5tFzgGBJd36swns3Fxj4rH3m6kowLvYJuTwS+5M8msw==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
