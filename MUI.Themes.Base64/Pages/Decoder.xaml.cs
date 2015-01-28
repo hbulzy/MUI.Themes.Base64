@@ -43,7 +43,6 @@ namespace MUI.Themes.Base64.Pages
                 string SaveFile = Save.FileName;
                 SavedFile.Text = "   "+SaveFile;
                 ResultText.BBCode = "Decoding...";
-                Loading.IsActive = true;
                 string Base64StringToConvert = string.Empty;
                 if (BrowsedFile.Text != "Please choose a file")
                 {
@@ -58,8 +57,7 @@ namespace MUI.Themes.Base64.Pages
                     Base64StringToConvert.Replace("data:image/png;base64,", string.Empty).Base64StringToBitmap().Save(SaveFile, ImageFormat.Png);
                     ResultText.BBCode = "It has also been saved as " + SaveFile + ".";
                 }
-                catch (Exception exc){ResultText.BBCode = "Good try, maybe another time.";}
-                Loading.IsActive = false;
+                catch (Exception){ResultText.BBCode = "Good try, maybe another time.";}
                 ResultImage.Source = new BitmapImage(new Uri(SaveFile, UriKind.Absolute));
             }
             }

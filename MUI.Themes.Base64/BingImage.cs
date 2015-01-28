@@ -75,7 +75,7 @@ namespace MUI.Themes.Base64
 
             return null;
             }
-            catch (Exception exc)
+            catch (Exception)
             {
                 AppearanceManager.Current.ThemeSource = AppearanceManager.LightThemeSource;
                 AppearanceManager.Current.AccentColor = Color.FromRgb(0xe5, 0x14, 0x00);

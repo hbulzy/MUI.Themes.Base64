@@ -7,6 +7,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace MUI.Themes.Base64.Pages
 {
@@ -25,6 +26,7 @@ namespace MUI.Themes.Base64.Pages
             OpenedFile.Text = "   Please choose a file";
             SavedFile.Text = "   Please choose a file";
             FinalResult.Text = "The encoding will automatically start when you select a file.";
+            BrowsedImage.Source = new BitmapImage(new Uri("Assets/transparent.png", UriKind.Relative));
             OpenFileDialog Browse = new OpenFileDialog();
             Browse.Title = "Browse...";
             Browse.InitialDirectory = "Desktop";
@@ -39,11 +41,10 @@ namespace MUI.Themes.Base64.Pages
                 string OpenFile = Browse.FileName;
                 OpenedFile.Text = "   " + OpenFile;
                 StreamReader streamReader = new StreamReader(OpenFile);
-                Loading.IsActive = true;
                 FinalResult.Text = "Encoding...";
+                BrowsedImage.Source = new BitmapImage(new Uri(OpenFile, UriKind.Absolute));
                 Bitmap bmp = new Bitmap(streamReader.BaseStream);
                 streamReader.Close();
-                Loading.IsActive = false;
                 FinalResult.Text = "data:image/png;base64," + bmp.ToBase64String(ImageFormat.Png);
             }
         }

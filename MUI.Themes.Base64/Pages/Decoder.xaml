@@ -24,8 +24,8 @@
                 <TextBlock/>
                 <TextBlock Text="Result:"/>
                 <mui:BBCodeBlock BBCode="The decoding will begin automatically after you select a file." Name="ResultText"/>
-                <mui:ModernProgressRing Width="80" Height="80" Style="{StaticResource WaveProgressRingStyle}" Name="Loading" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Image Name="ResultImage" Height="256" Width="256" Stretch="Uniform"/>
+                <TextBlock/>
+                <Image Name="ResultImage" Height="256" Stretch="Uniform"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

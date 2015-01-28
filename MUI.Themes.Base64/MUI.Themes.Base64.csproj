@@ -31,8 +31,8 @@
     <SuiteName>MUI.Themes</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.0.6.1</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.7.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -56,7 +56,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Alecive-Flatwoken-Apps-Libreoffice-Base.ico</ApplicationIcon>
+    <ApplicationIcon>Assets\Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -218,7 +218,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Alecive-Flatwoken-Apps-Libreoffice-Base.ico" />
+    <Content Include="Assets\Icon.ico" />
     <Content Include="Assets\background.kitty.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
