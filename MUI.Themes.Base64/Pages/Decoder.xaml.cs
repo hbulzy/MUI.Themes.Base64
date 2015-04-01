@@ -1,5 +1,4 @@
-﻿using Base64Bitmaps;
-using FirstFloor.ModernUI.Windows.Controls;
+﻿using FirstFloor.ModernUI.Windows.Controls;
 using Microsoft.Win32;
 using System;
 using System.Drawing;
@@ -34,7 +33,37 @@ namespace MUI.Themes.Base64.Pages
             ResultText.BBCode = "The decoding will begin automatically after you select a file.";
             Save.Title = "Save as...";
             Save.InitialDirectory = "Desktop";
-            Save.Filter = "Portable Network Graphics|*.png";
+            string Base64StringToConvert = string.Empty;
+            if (BrowsedFile.Text != "Please choose a file")
+            {
+                StreamReader streamReader = new StreamReader(BrowsedFile.Text);
+                Base64StringToConvert = streamReader.ReadToEnd();
+                streamReader.Close();
+            }
+            else if (Base64String.Text != string.Empty) { Base64StringToConvert = Base64String.Text; }
+            else { }
+            if (Base64StringToConvert.Contains("data:image/png;base64,")) 
+            { 
+                Save.Filter = "Portable Network Graphics|*.png";
+                Base64StringToConvert.Replace("data:image/png;base64,", string.Empty);
+            }
+            else if (Base64StringToConvert.Contains("data:image/gif;base64,")) 
+            { 
+                Save.Filter = "Graphics Interchange Format|*.gif";
+                Base64StringToConvert.Replace("data:image/gif;base64,", string.Empty);
+            }
+            else if (Base64StringToConvert.Contains("data:image/jpg;base64,") | Base64StringToConvert.Contains("data:image/jpeg;base64")) 
+            { 
+                Save.Filter = "Joint Photographic Experts Group|*.jpg;*.jpeg";
+                Base64StringToConvert.Replace("data:image/jpg;base64,", string.Empty);
+                Base64StringToConvert.Replace("data:image/jpeg;base64,", string.Empty);
+            }
+            else if (Base64StringToConvert.Contains("data:image/bmp;base64,"))
+            {
+                Save.Filter = "Bitmap|*.bmp";
+                Base64StringToConvert.Replace("data:image/bmp;base64,", string.Empty);
+            }
+            else { ModernDialog.ShowMessage("Only supports BMP, JPG, JPEG, GIF and PNG for now.", "Warning", MessageBoxButton.OK); return; }
             Save.CheckPathExists = true;
             Save.ValidateNames = true;
             Nullable<bool> FileSelected = Save.ShowDialog();
@@ -43,18 +72,29 @@ namespace MUI.Themes.Base64.Pages
                 string SaveFile = Save.FileName;
                 SavedFile.Text = "   "+SaveFile;
                 ResultText.BBCode = "Decoding...";
-                string Base64StringToConvert = string.Empty;
-                if (BrowsedFile.Text != "Please choose a file")
-                {
-                    StreamReader streamReader = new StreamReader(BrowsedFile.Text);
-                    Base64StringToConvert = streamReader.ReadToEnd();
-                    streamReader.Close();
-                }
-                else if (Base64String.Text != string.Empty) {Base64StringToConvert = Base64String.Text;}
-                else{}
                 try
                 {
-                    Base64StringToConvert.Replace("data:image/png;base64,", string.Empty).Base64StringToBitmap().Save(SaveFile, ImageFormat.Png);
+                    if (Save.Filter == "Portable Network Graphics|*.png")
+                    {
+                        System.Drawing.Image Result = BitmapToBase64.Base64.ImageFromBase64String(Base64StringToConvert);
+                        Result.Save(SaveFile, ImageFormat.Png);
+                    }
+                    else if (Save.Filter == "Graphics Interchange Format|*.gif")
+                    {
+                        System.Drawing.Image Result = BitmapToBase64.Base64.ImageFromBase64String(Base64StringToConvert);
+                        Result.Save(SaveFile, ImageFormat.Gif);
+                    }
+                    else if (Save.Filter == "Joint Photographic Experts Group|*.jpg;*.jpeg")
+                    {
+                        System.Drawing.Image Result = BitmapToBase64.Base64.ImageFromBase64String(Base64StringToConvert);
+                        Result.Save(SaveFile, ImageFormat.Jpeg);
+                    }
+                    else if (Save.Filter == "Bitmap|*.bmp")
+                    {
+                        
+                        System.Drawing.Image Result = BitmapToBase64.Base64.ImageFromBase64String(Base64StringToConvert);
+                        Result.Save(SaveFile, ImageFormat.Bmp);
+                    }
                     ResultText.BBCode = "It has also been saved as " + SaveFile + ".";
                 }
                 catch (Exception){ResultText.BBCode = "Good try, maybe another time.";}

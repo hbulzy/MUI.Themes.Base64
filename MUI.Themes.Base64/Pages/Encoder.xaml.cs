@@ -1,10 +1,11 @@
-﻿using Base64Bitmaps;
+﻿using BitmapToBase64;
 using FirstFloor.ModernUI.Windows.Controls;
 using Microsoft.Win32;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Web;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -30,7 +31,7 @@ namespace MUI.Themes.Base64.Pages
             OpenFileDialog Browse = new OpenFileDialog();
             Browse.Title = "Browse...";
             Browse.InitialDirectory = "Desktop";
-            Browse.Filter = "Portable Network Graphics|*.png";
+            Browse.Filter = "All Files (*.*)|*.*";
             Browse.CheckFileExists = true;
             Browse.CheckPathExists = true;
             Browse.ValidateNames = true;
@@ -40,12 +41,15 @@ namespace MUI.Themes.Base64.Pages
             {
                 string OpenFile = Browse.FileName;
                 OpenedFile.Text = "   " + OpenFile;
-                StreamReader streamReader = new StreamReader(OpenFile);
                 FinalResult.Text = "Encoding...";
-                BrowsedImage.Source = new BitmapImage(new Uri(OpenFile, UriKind.Absolute));
-                Bitmap bmp = new Bitmap(streamReader.BaseStream);
-                streamReader.Close();
-                FinalResult.Text = "data:image/png;base64," + bmp.ToBase64String(ImageFormat.Png);
+                string FileType= Path.GetExtension(OpenFile);
+                string MimeType= MimeMapping.GetMimeMapping(FileType);
+                if (FileType == ".png" | FileType == ".jpg" | FileType == ".jpeg" | FileType == ".gif" | FileType == ".bmp" | FileType == ".ico") { BrowsedImage.Source = new BitmapImage(new Uri(OpenFile, UriKind.Absolute)); }
+                if (FileType == ".png") { FinalResult.Text = "data:"+MimeType+";base64," + BitmapToBase64.Base64.ImageToBase64String(System.Drawing.Image.FromFile(OpenFile), ImageFormat.Png); }
+                else if (FileType == ".jpg" | FileType == ".jpeg") { FinalResult.Text = "data:"+MimeType+";base64," + BitmapToBase64.Base64.ImageToBase64String(System.Drawing.Image.FromFile(OpenFile), ImageFormat.Jpeg); }
+                else if (FileType == ".gif") { FinalResult.Text = "data:"+MimeType+";base64," + BitmapToBase64.Base64.ImageToBase64String(System.Drawing.Image.FromFile(OpenFile), ImageFormat.Gif); }
+                else if (FileType == ".bmp") { FinalResult.Text = "data:"+MimeType+";base64," + BitmapToBase64.Base64.ImageToBase64String(System.Drawing.Image.FromFile(OpenFile), ImageFormat.Bmp); }
+                else { FinalResult.Text = "data:" + MimeType + ";base64," + BitmapToBase64.Base64.FileToBase64String(OpenFile); }
             }
         }
 
