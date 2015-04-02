@@ -70,6 +70,9 @@
   <PropertyGroup>
     <ManifestKeyFile>MUI.Themes.Base64_CléTemporaire.pfx</ManifestKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MUI.Themes.Base64.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="FirstFloor.ModernUI, Version=1.0.6.0, Culture=neutral, PublicKeyToken=2d21ec3cd074c59a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -192,6 +195,9 @@
     <Compile Include="Pages\Working.xaml.cs">
       <DependentUpon>Working.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Page Include="Pages\InstructionsEncoder.xaml">
       <SubType>Designer</SubType>
@@ -220,6 +226,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\File.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Icon.ico" />
     <Content Include="Assets\background.kitty.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -243,6 +252,14 @@
   <ItemGroup>
     <None Include="MUI.Themes.Base64_CléTemporaire.pfx" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <FileAssociation Include=".base64">
+      <Visible>False</Visible>
+      <Description>Base64 String</Description>
+      <Progid>Base64</Progid>
+      <DefaultIcon>Assets\File.ico</DefaultIcon>
+    </FileAssociation>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

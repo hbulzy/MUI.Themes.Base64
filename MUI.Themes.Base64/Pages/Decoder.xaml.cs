@@ -33,37 +33,38 @@ namespace MUI.Themes.Base64.Pages
             ResultText.BBCode = "The decoding will begin automatically after you select a file.";
             Save.Title = "Save as...";
             Save.InitialDirectory = "Desktop";
+            string Base64StringToConvertBefore = string.Empty;
             string Base64StringToConvert = string.Empty;
             if (BrowsedFile.Text != "Please choose a file")
             {
                 StreamReader streamReader = new StreamReader(BrowsedFile.Text);
-                Base64StringToConvert = streamReader.ReadToEnd();
+                Base64StringToConvertBefore = streamReader.ReadToEnd();
                 streamReader.Close();
             }
-            else if (Base64String.Text != string.Empty) { Base64StringToConvert = Base64String.Text; }
+            else if (Base64String.Text != string.Empty) { Base64StringToConvertBefore = Base64String.Text; }
             else { }
-            if (Base64StringToConvert.Contains("data:image/png;base64,")) 
+            if (Base64StringToConvertBefore.Contains("data:image/png;base64,")) 
             { 
                 Save.Filter = "Portable Network Graphics|*.png";
-                Base64StringToConvert.Replace("data:image/png;base64,", string.Empty);
+                Base64StringToConvert = Base64StringToConvertBefore.Replace("data:image/png;base64,", string.Empty);
             }
-            else if (Base64StringToConvert.Contains("data:image/gif;base64,")) 
+            else if (Base64StringToConvertBefore.Contains("data:image/gif;base64,")) 
             { 
                 Save.Filter = "Graphics Interchange Format|*.gif";
-                Base64StringToConvert.Replace("data:image/gif;base64,", string.Empty);
+                Base64StringToConvert = Base64StringToConvertBefore.Replace("data:image/gif;base64,", string.Empty);
             }
-            else if (Base64StringToConvert.Contains("data:image/jpg;base64,") | Base64StringToConvert.Contains("data:image/jpeg;base64")) 
+            else if (Base64StringToConvertBefore.Contains("data:image/jpg;base64,")) 
             { 
                 Save.Filter = "Joint Photographic Experts Group|*.jpg;*.jpeg";
-                Base64StringToConvert.Replace("data:image/jpg;base64,", string.Empty);
-                Base64StringToConvert.Replace("data:image/jpeg;base64,", string.Empty);
+                Base64StringToConvert = Base64StringToConvertBefore.Replace("data:image/jpg;base64,", string.Empty);
+                Base64StringToConvertBefore.Replace("data:image/jpeg;base64,", string.Empty);
             }
-            else if (Base64StringToConvert.Contains("data:image/bmp;base64,"))
-            {
-                Save.Filter = "Bitmap|*.bmp";
-                Base64StringToConvert.Replace("data:image/bmp;base64,", string.Empty);
+            else if(Base64StringToConvertBefore.Contains("data:image/jpeg;base64")) 
+            { 
+                Save.Filter = "Joint Photographic Experts Group|*.jpg;*.jpeg";
+                Base64StringToConvert = Base64StringToConvertBefore.Replace("data:image/jepg;base64,", string.Empty);
             }
-            else { ModernDialog.ShowMessage("Only supports BMP, JPG, JPEG, GIF and PNG for now.", "Warning", MessageBoxButton.OK); return; }
+            else { ModernDialog.ShowMessage("Only supports JPG, JPEG, GIF and PNG for now.", "Warning", MessageBoxButton.OK); return; }
             Save.CheckPathExists = true;
             Save.ValidateNames = true;
             Nullable<bool> FileSelected = Save.ShowDialog();
@@ -89,12 +90,6 @@ namespace MUI.Themes.Base64.Pages
                         System.Drawing.Image Result = BitmapToBase64.Base64.ImageFromBase64String(Base64StringToConvert);
                         Result.Save(SaveFile, ImageFormat.Jpeg);
                     }
-                    else if (Save.Filter == "Bitmap|*.bmp")
-                    {
-                        
-                        System.Drawing.Image Result = BitmapToBase64.Base64.ImageFromBase64String(Base64StringToConvert);
-                        Result.Save(SaveFile, ImageFormat.Bmp);
-                    }
                     ResultText.BBCode = "It has also been saved as " + SaveFile + ".";
                 }
                 catch (Exception){ResultText.BBCode = "Good try, maybe another time.";}
@@ -112,7 +107,7 @@ namespace MUI.Themes.Base64.Pages
             OpenFileDialog Browse = new OpenFileDialog();
             Browse.Title = "Browse...";
             Browse.InitialDirectory = "Desktop";
-            Browse.Filter = "Text|*.txt";
+            Browse.Filter = "Base64 String|*.base64";
             Browse.CheckFileExists = true;
             Browse.CheckPathExists = true;
             Browse.ValidateNames = true;

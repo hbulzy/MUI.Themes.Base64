@@ -64,7 +64,7 @@ namespace MUI.Themes.Base64.Pages
             SaveFileDialog Save = new SaveFileDialog();
             Save.Title = "Save as...";
             Save.InitialDirectory = "Desktop";
-            Save.Filter = "Text|*.txt";
+            Save.Filter = "Base64 String|*.base64";
             Save.CheckPathExists = true;
             Save.ValidateNames = true;
             Nullable<bool> FileSelected = Save.ShowDialog();
