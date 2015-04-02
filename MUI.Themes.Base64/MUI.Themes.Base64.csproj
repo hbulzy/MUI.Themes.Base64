@@ -32,7 +32,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.1.0.0</ApplicationVersion>
+    <ApplicationVersion>1.1.1.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -71,7 +71,7 @@
     <ManifestKeyFile>MUI.Themes.Base64_CléTemporaire.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>MUI.Themes.Base64.Program</StartupObject>
+    <StartupObject>MUI.Themes.Base64.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FirstFloor.ModernUI, Version=1.0.6.0, Culture=neutral, PublicKeyToken=2d21ec3cd074c59a, processorArchitecture=MSIL">
@@ -194,9 +194,6 @@
     </Compile>
     <Compile Include="Pages\Working.xaml.cs">
       <DependentUpon>Working.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs">
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Page Include="Pages\InstructionsEncoder.xaml">
