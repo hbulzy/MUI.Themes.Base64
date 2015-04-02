@@ -9,11 +9,11 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <mui:BBCodeBlock BBCode="Welcome to the [b]MUI.Themes.Base64[/b] encoder/decoder. You can only encode and decode PNG images. To start, click on the Encoder or the Decoder tab." Margin="0,0,0,4"/>
+                <mui:BBCodeBlock BBCode="Welcome to the [b]MUI.Themes.Base64[/b] encoder/decoder. You can encode anything, but you can only decode BMP, PNG, JPG, JPEG and GIF images for now. To start, click on the Encoder or the Decoder tab." Margin="0,0,0,4"/>
                 <mui:BBCodeBlock BBCode="You can go to the [url=/Pages/Settings.xaml]settings page[/url] to adapt the appearance to your preference."/>
                 <mui:BBCodeBlock BBCode="You can go to the [url=https://github.com/charlesmilette/MUI.Themes.Base64]GitHub page[/url] to get the source code."/>
                 <mui:BBCodeBlock BBCode="You can go to the [url=https://charlesmilette.github.io/MUI.Themes.Base64]web site[/url] to get more details."/>
-                <mui:BBCodeBlock BBCode="The ExtBitmap.cs file comes from [url=https://code.msdn.microsoft.com/Converting-Base64-strings-8808c305]this sample[/url]."/>
+                <mui:BBCodeBlock BBCode="The Base64 capabilities comes from [url=(http://www.codeproject.com/Articles/26536/Image-Icon-Cursor-and-Anything-Else-to-Base-Con]this sample[/url]."/>
                 <mui:BBCodeBlock BBCode="The icon comes from [url=https://github.com/alecive/FlatWoken]this repository[/url]."/>
             </StackPanel>
         </ScrollViewer>

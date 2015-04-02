@@ -9,7 +9,7 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <mui:BBCodeBlock BBCode="You only have to choose a file with the 'Browse...' button, the rest is all automatic. The result will appear in the box under and will by the way, confirm the success. The big ones will make crash this program when you will try to select them. So you can use the 'Save as..' button to save the Base64 string to a .txt file." />
+                <mui:BBCodeBlock BBCode="You only have to choose a file with the 'Browse...' button, the rest is all automatic. The result will appear in the box under and will by the way, confirm the success. The big ones will make freeze this program when you will try to select all the output. So you can use the 'Save as..' button to save the Base64 string to a .txt file." />
             </StackPanel>
         </ScrollViewer>
     </Grid>
