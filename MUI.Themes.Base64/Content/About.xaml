@@ -12,7 +12,7 @@
                 <TextBlock Text="ABOUT" Style="{StaticResource Heading2}" />
                 <mui:BBCodeBlock BBCode="The [b]MUI.Themes.Base64 encoder/decoder[/b] is an program to encode and to decode the Base64 API. You can encode anything, but you can only decode PNG, JPG, JPEG and GIF images for now." Margin="0,0,0,4"/>
                 <mui:BBCodeBlock BBCode="You can go to the [url=https://github.com/charlesmilette/MUI.Themes.Base64]GitHub page[/url] to get the source code."/>
-                <mui:BBCodeBlock BBCode="You can go to the [url=https://charlesmilette.github.io/MUI.Themes.Base64]web site[/url] to get more details."/>
+                <mui:BBCodeBlock BBCode="You can go to the [url=https://charlesmilette.github.io/?src=MUI.Themes.Base64]web site[/url] to get more details."/>
                 <mui:BBCodeBlock BBCode="The Base64 capabilities comes from [url=http://www.codeproject.com/Articles/26536/Image-Icon-Cursor-and-Anything-Else-to-Base-Con]this project[/url]."/>
                 <mui:BBCodeBlock BBCode="The icon comes from [url=https://github.com/alecive/FlatWoken]this repository[/url]."/>
             </StackPanel>
